@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Quotes</title>
+    <style>
+        body { 
+            font-family: Georgia, serif; 
+            max-width: 800px; 
+            margin: 50px auto; 
+            padding: 20px; 
+        }
+        .quote-card { 
+            background: #f5f5f5; 
+            padding: 20px; 
+            margin: 15px 0; 
+            border-radius: 8px;
+            border-left: 4px solid #007bff; 
+        }
+        .text { font-style: italic; }
+        .author { color: #666; margin-top: 10px; }
+        a { color: #007bff; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <h1>All Quotes</h1>
+    
+    {% for quote in quotes %}
+    <div class="quote-card">
+        <p class="text">"{{ quote.text }}"</p>
+        <p class="author">- {{ quote.author }}</p>
+    </div>
+    {% endfor %}
+    
+    <p><a href="{% url 'home' %}">← Random Quote</a></p>
+</body>
+</html>

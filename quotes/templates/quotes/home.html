@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quote of the Day</title>
+    <style>
+        body { 
+            font-family: Georgia, serif; 
+            max-width: 600px; 
+            margin: 50px auto; 
+            padding: 20px;
+            text-align: center; 
+        }
+        .quote-box { 
+            background: #f5f5f5; 
+            padding: 30px; 
+            border-radius: 10px; 
+            margin: 30px 0; 
+        }
+        .text { font-size: 22px; font-style: italic; line-height: 1.6; }
+        .author { color: #666; margin-top: 15px; }
+        a { color: #007bff; text-decoration: none; margin: 0 10px; }
+    </style>
+</head>
+<body>
+    <h1>Quote of the Day</h1>
+    
+    <div class="quote-box">
+        <p class="text">"{{ quote.text }}"</p>
+        <p class="author">- {{ quote.author }}</p>
+    </div>
+    
+    <a href="{% url 'home' %}">New Quote</a>
+    <a href="{% url 'all_quotes' %}">All Quotes</a>
+</body>
+</html>
